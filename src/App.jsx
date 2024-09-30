@@ -9,14 +9,23 @@ function App() {
     const[count,setCount] = useState(0)
    
   const addCount =()=>{
-    setCount(count+1)
-   
-    
+    setCount(count+1)  
   }
+
+  //spread
+  let obj = {
+    title:'1st counter'
+    ,    
+  }
+
+  
   return (
     <div>
       <button onClick={addCount}>Add</button>
-     <Counter count = {count}/>
+      <Counter {...obj}/>
+     <Counter title ='1st'count = {count}/>
+     <Counter title = '2nd'count = {count}/>
+
     </div>
   );
 }
